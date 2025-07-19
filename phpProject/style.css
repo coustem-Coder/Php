@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  background-color: #f1faee;
+}
+main {
+  height: 100%;
+  width: 100%;
+  background-color: #f1faee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.form-container {
+  height: 50%;
+  width: 50%;
+  background: #212529;
+  border-radius: 1rem;
+  border: 1px solid black;
+  padding: 1rem;
+}
+form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.2rem;
+  color: #e0e1dd;
+}
+.gap {
+  gap: 0.2rem;
+}
+.noteTitleContainer {
+  height: 15%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+#inputTitle {
+  height: 80%;
+  color: #e0e1dd;
+  border: 1px solid #6d5656;
+  border-radius: 0.4rem;
+  background-color: #152025;
+  text-align: left;
+  font-size: 1.2rem;
+  padding: 1rem 1rem;
+}
+.noteDescriptionContainer {
+  height: 50%;
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+}
+#inputDescription {
+  height: 90%;
+  color: #e0e1dd;
+
+  background-color: #152025;
+
+  border: 1px solid #6d5656;
+  border-radius: 0.4rem;
+  text-align: left;
+
+  font-size: 1.2rem;
+  padding: 1rem 1.5rem;
+}
+.submitContainer {
+  width: 80%;
+  display: flex;
+}
+.submitBtn {
+  color: white;
+  background-color: #006aff;
+  padding: 1rem 1.3rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.result {
+  height: 40%;
+  width: 50%;
+}
+.table {
+  width: 100%;
+}
+
+@media (width<1100px) {
+  /* main {
+    background: red; */
+  /* } */
+  .form-container {
+    width: 70%;
+  }
+
+  .result {
+    width: 70%;
+  }
+}
+@media (width<850px) {
+  .form-container {
+    width: 90%;
+  }
+  .result {
+    width: 90%;
+  }
+}
+@media (width<650px) {
+  .form-container {
+    padding: 1rem 0;
+  }
+  .result {
+    font-size: 1rem;
+  }
+  .result button {
+    width: 100%;
+  }
+}
