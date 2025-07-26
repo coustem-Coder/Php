@@ -1,0 +1,15 @@
+.card {
+  height: 31rem;
+}
+.card-text {
+  height: 100px;
+  overflow-y: scroll;
+}
+.navUser {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
