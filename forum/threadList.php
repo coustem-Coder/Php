@@ -167,7 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
               <h5 class="mt-0 mb-1">' . $userName . '</h5>
               <small class="text-muted">' . $agoTime . '</small>
             </div>
-            <p class="mb-0"><a href="thread.php?threadId=' . $row['thread_id'] . '&threadUserName=' . $userName . '">' . $row['thread_title'] . '</a></p>
+            <p class="mb-0"><a href="thread.php?threadId=' . $row['thread_id'] . '">' . $row['thread_title'] . '</a></p>
           </div>
         </div>
         <hr>';

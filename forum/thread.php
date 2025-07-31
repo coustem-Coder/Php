@@ -151,24 +151,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
         $agoTime = timeAgo($row['comment_time'], true);
         $commentUserId = $row['comment_user_id'];
+        $commentId = $row['comment_id'];
+
         $searchUserQuery = "SELECT * FROM `users` WHERE `user_id` = $commentUserId";
         $searchUserResult = mysqli_query($conn, $searchUserQuery);
         $userRow = mysqli_fetch_assoc($searchUserResult);
         $commentUserName = $userRow['username'];
 
         echo '<div class="d-flex align-items-start mb-4 my-3">
-              <img
-                src="https://png.pngtree.com/png-vector/20191027/ourlarge/pngtree-user-icon-isolated-on-abstract-background-png-image_1875037.jpg"
-                class="me-3 rounded" alt="Profile Image" width="50px">
-              <div class="flex-grow-1">
+        <img
+        src="https://png.pngtree.com/png-vector/20191027/ourlarge/pngtree-user-icon-isolated-on-abstract-background-png-image_1875037.jpg"
+        class="me-3 rounded" alt="Profile Image" width="50px">
+        <div class="flex-grow-1">
                 <div class="d-flex justify-content-between">
                   <h5 class="mt-0 mb-1">' . $commentUserName . '</h5>
                   <small class="text-muted">' . $agoTime . '</small>
-                </div>
-                <p class="mb-0">' . $row['comment_content'] . '</p>
-              </div>
-            </div>
-            <hr>';
+                  </div>
+                  <p class="mb-0">' . $row['comment_content'] . '</p>
+                  </div>
+                  </div>';
+        if (isset($_SESSION['username'])) {
+          if ($commentUserName == $_SESSION['username']) {
+
+            echo ' <a href="deleteComment.php?comment_id=' . $commentId . '&threadId=' . $threadId . '">
+                      <div class="btn btn-sm btn-danger">Delete Comment</div>
+                    </a>';
+          }
+        }
+        echo '<hr>';
 
       }
     }
